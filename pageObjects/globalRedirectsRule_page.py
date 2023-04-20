@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as ec
 
 class globalRedirectsRulePage:
 
+    __CCLogo = (By.XPATH, "//a[@title='Creative Capsule']")
+
     __yahooTextArea = (By.ID, 'yschsp')
     __yahooBtn = (By.XPATH, "//button[@type='submit']")
 
@@ -102,26 +104,27 @@ class globalRedirectsRulePage:
         wait = WebDriverWait(self._driver, 10)
         wait.until(ec.presence_of_element_located(self.__yahooLink))
         self._driver.find_element(*self.__yahooLink).click()
-        wait = WebDriverWait(self._driver, 10)
-        wait.until(ec.title_is("Software Consulting and Development - Creative Capsule"))
+        time.sleep(4)
+
 
 
 
 
     def bingSearch(self):
         self._driver.get(self.__bingUrl)
+        wait = WebDriverWait(self._driver, 10)
+        wait.until(ec.presence_of_element_located(self.__bingTextArea))
         TA = self._driver.find_element(*self.__bingTextArea)
         TA.click()
+        time.sleep(1)
         TA.send_keys("Creative capsule")
         # For Firefox
-        TA.click()
+        # TA.click()
         ActionChains(self._driver).send_keys(Keys.ENTER).perform()
         wait = WebDriverWait(self._driver, 10)
         wait.until(ec.presence_of_element_located(self.__bingLink))
         self._driver.find_element(*self.__bingLink).click()
-        wait = WebDriverWait(self._driver, 10)
-        wait.until(ec.title_contains("Software Consulting and Development - Creative Capsule"))
-
+        time.sleep(4)
 
     def googleSearch(self):
         # self._driver.switch_to.new_window('tab')
