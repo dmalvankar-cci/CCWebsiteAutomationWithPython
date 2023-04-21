@@ -17,9 +17,11 @@ def test_checkJobShare(driver):
     CCJobShare_page.clickLinkedInShare()
     driver.switch_to.window(driver.window_handles[1])
     CCJobShare_page.perform_login(username, password)
+    time.sleep(15)
     CCJobShare_page.postToLinkedIn()
     assert CCJobShare_page.linkedPostImg_isDisplayed(), "The image isnt displayed"
     CCJobShare_page.afterOTGVerification()
+    driver.switch_to.window(driver.window_handles[2])
     CCJobShare_page.linkedinAfterSharing()
 
 

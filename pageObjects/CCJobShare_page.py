@@ -55,6 +55,7 @@ class CCJobSharePage:
         wait.until(ec.presence_of_element_located(self.__linkedInViewPostBtn))
         self._driver.find_element(*self.__linkedInViewPostBtn).click()
 
+
     def perform_login(self, username, password):
         pass_username = self._driver.find_element(*self.__linkedInUsername)
         pass_password = self._driver.find_element(*self.__linkedInPass)
@@ -65,8 +66,7 @@ class CCJobSharePage:
         press_loginBtn.click()
 
     def linkedinAfterSharing(self):
-        self._driver.find_element(*self.__linkedInPostBtn).click()
-        self._driver.save_full_page_screenshot("CCAfterSharing.png")
+        self._driver.save_screenshot("D:\Git work\CCWebsiteAutomation\Screenshots\linkedin.png")
 
 
 
