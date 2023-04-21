@@ -4,3 +4,4 @@ openPositionUrl = "https://www.creativecapsule.com/open-positions/"
 germanSiteUrl = "https://www.creativecapsule.com/de"
 
 
+
