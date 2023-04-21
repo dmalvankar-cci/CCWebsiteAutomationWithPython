@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 
-class globalRedirectsRulePage:
+class CCWebSearchPage:
 
     __CCLogo = (By.XPATH, "//a[@title='Creative Capsule']")
 
@@ -106,6 +106,11 @@ class globalRedirectsRulePage:
         self._driver.find_element(*self.__yahooLink).click()
         time.sleep(4)
 
+    def verifyIfCCLogoVisible(self):
+        wait = WebDriverWait(self._driver, 10)
+        wait.until(ec.presence_of_element_located(self.__CCLogo))
+        return self._driver.find_element(*self.__CCLogo).is_displayed()
+
 
 
 
@@ -126,6 +131,8 @@ class globalRedirectsRulePage:
         self._driver.find_element(*self.__bingLink).click()
         time.sleep(4)
 
+
+
     def googleSearch(self):
         # self._driver.switch_to.new_window('tab')
         self._driver.get(self.__googleUrl)
@@ -136,6 +143,16 @@ class globalRedirectsRulePage:
         wait.until(ec.presence_of_element_located(self.__googleLink))
         self._driver.find_element(*self.__googleLink).click()
         ActionChains(self._driver).send_keys(Keys.ENTER).perform()
+        wait = WebDriverWait(self._driver, 10)
+        wait.until(ec.visibility_of_element_located(self.__CCLogo))
+
+
+
+
+
+
+
+
 
 
 

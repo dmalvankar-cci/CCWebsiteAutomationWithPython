@@ -1,8 +1,8 @@
 # Import packages
-import pytest
 
+import pytest
 from globalConstants import websiteUrl
-from pageObjects.globalRedirectsRule_page import globalRedirectsRulePage
+from pageObjects.CCWebSearch_page import CCWebSearchPage
 
 
 def test_globalRedirectsVerification(driver):
@@ -26,34 +26,42 @@ def test_globalRedirectsVerification(driver):
         creativecapsule.mobi---https://www.creativecapsule.com/
 
     """
-    globalRedirectsRule_page = globalRedirectsRulePage(driver)
+    CCWebSearch_page = CCWebSearchPage(driver)
 
 
 
 
-def test_bingSearchVerify(driver):
-    globalRedirectsRule_page = globalRedirectsRulePage(driver)
 
-    globalRedirectsRule_page.bingSearch()
-    # globalRedirectsRule_page.bingCCLinkClick()
-    driver.switch_to.window(driver.window_handles[1])
-    assert globalRedirectsRule_page.current_url == websiteUrl, "Site Url is not matched"
+def test_bingSearchVerify(driver, check_browserSpecificTest):
+    CCWebSearch_page = CCWebSearchPage(driver)
+    # The entire testcase is in conftest.py file as it id browser specific testcase
+
+
+
+
+
+
 
 def test_googleSearchVerify(driver):
-    globalRedirectsRule_page = globalRedirectsRulePage(driver)
-    globalRedirectsRule_page.googleSearch()
-    # driver.switch_to.window(driver.window_handles[2])
-    assert globalRedirectsRule_page.current_url == websiteUrl, "Site Url is not matched"
+    CCWebSearch_page = CCWebSearchPage(driver)
+    CCWebSearch_page.googleSearch()
+    assert CCWebSearch_page.current_url == websiteUrl, "Site Url is not matched"
+    assert CCWebSearch_page.verifyIfCCLogoVisible(), "The CC logo isnt located"
 
-    # globalRedirectsRule_page.yahooSearch()
+
+
 
 def test_yahooSearchVerify(driver):
-    globalRedirectsRule_page = globalRedirectsRulePage(driver)
+    CCWebSearch_page = CCWebSearchPage(driver)
 
-    globalRedirectsRule_page.yahooSearch()
-    # globalRedirectsRule_page.bingCCLinkClick()
+    CCWebSearch_page.yahooSearch()
+
     driver.switch_to.window(driver.window_handles[1])
-    assert globalRedirectsRule_page.current_url == websiteUrl, "Site Url is not matched"
+    assert CCWebSearch_page.current_url == websiteUrl, "Site Url is not matched"
+    assert CCWebSearch_page.verifyIfCCLogoVisible(), "The CC logo isnt located"
+
+
+
 
 
 
