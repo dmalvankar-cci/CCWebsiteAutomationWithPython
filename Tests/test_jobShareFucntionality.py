@@ -5,7 +5,7 @@ from globalConstants import sharedPost
 from pageObjects.CCJobShare_page import CCJobSharePage
 
 
-def test_checkJobShare(driver):
+def test_checkJobShareLinkedin(driver):
 
 
     CCJobShare_page = CCJobSharePage(driver)
