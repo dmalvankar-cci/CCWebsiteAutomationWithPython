@@ -26,9 +26,18 @@ class CCJobSharePage:
     __linkedInPostBtn = (By.XPATH, "//button[@id='ember53']")
     __linkedInViewPostBtn = (By.XPATH, "//a[normalize-space()='View post']")
 
+    __linkedInImgAfterPosted = (By.XPATH, "//a[@aria-label='Open article: .NET Developer/ Senior Developer - Creative Capsule by creativecapsule.com']")
+
 
     def __init__(self, driver: WebDriver):
         self._driver = driver
+
+
+
+    @property
+    def current_url(self):
+        return self._driver.current_url
+
 
     def open(self):
         self._driver.get(openPositionUrl)
@@ -48,7 +57,10 @@ class CCJobSharePage:
         return self._driver.find_element(*self.__linkedInPostImg).is_displayed()
 
     def postToLinkedIn(self):
+        wait = WebDriverWait(self._driver, 10)
+        wait.until(ec.presence_of_element_located(self.__linkedInShareBtn))
         self._driver.find_element(*self.__linkedInShareBtn).click()
+
     def afterOTGVerification(self):
         self._driver.find_element(*self.__linkedInPostBtn).click()
         wait = WebDriverWait(self._driver, 10)
@@ -67,6 +79,11 @@ class CCJobSharePage:
 
     def linkedinAfterSharing(self):
         self._driver.save_screenshot("D:\Git work\CCWebsiteAutomation\Screenshots\linkedin.png")
+        self._driver.find_element(*self.__linkedInImgAfterPosted).click()
+        self._driver.switch_to.window(self._driver.window_handles[3])
+        wait = WebDriverWait(self._driver, 10)
+        wait.until(ec.presence_of_element_located(self.__linkedIn))
+
 
 
 
