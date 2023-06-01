@@ -6,14 +6,15 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-from globalConstants import openPositionUrl
+import ValueManager
+from ValueManager import openPositionUrl
 
 
 class CCJobSharePage:
 
-    __linkedInUsername = (By.ID, "username")
-    __linkedInPass = (By.ID, "password")
-    __linkednInSignInBtn = (By.XPATH, "//button[normalize-space()='Sign in']")
+    __linkedInUsername = (By.XPATH, "//input[@id='session_key']")
+    __linkedInPass = (By.XPATH, "//input[@id='session_password']")
+    __linkednInSignInBtn = (By.XPATH, "//button[@type='submit'][normalize-space()='Sign in']")
 
     __post = (By.XPATH, "//div[@data-title='.NET Developer/ Senior Developer']")
     __linkedIn = (By.XPATH, "//a[@class='click-linkedin-share']")
@@ -78,7 +79,7 @@ class CCJobSharePage:
         press_loginBtn.click()
 
     def linkedinAfterSharing(self):
-        self._driver.save_screenshot("D:\Git work\CCWebsiteAutomation\Screenshots\linkedin.png")
+        self._driver.save_screenshot(ValueManager.save_screenshot_path_linkedin)
         self._driver.find_element(*self.__linkedInImgAfterPosted).click()
         self._driver.switch_to.window(self._driver.window_handles[3])
         wait = WebDriverWait(self._driver, 10)

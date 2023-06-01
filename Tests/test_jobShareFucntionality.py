@@ -1,7 +1,7 @@
 import time
 
 import readExcelData
-from globalConstants import sharedPost
+from ValueManager import sharedPost
 from pageObjects.CCJobShare_page import CCJobSharePage
 
 

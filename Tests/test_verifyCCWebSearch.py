@@ -1,7 +1,7 @@
 # Import packages
 
 import pytest
-from globalConstants import websiteUrl
+from ValueManager import websiteUrl
 from pageObjects.CCWebSearch_page import CCWebSearchPage
 
 
@@ -34,7 +34,7 @@ from pageObjects.CCWebSearch_page import CCWebSearchPage
 
 def test_bingSearchVerify(driver, check_browserSpecificTest):
     CCWebSearch_page = CCWebSearchPage(driver)
-    # The entire testcase is in conftest.py file as it id browser specific testcase
+    # The entire testcase is in ConfigurationManager.py file as it id browser specific testcase
 
 
 

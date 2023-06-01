@@ -99,7 +99,8 @@ class CCWebSearchPage:
         wait = WebDriverWait(self._driver, 10)
         wait.until(ec.presence_of_element_located(self.__yahooTextArea))
         self._driver.find_element(*self.__yahooTextArea).send_keys("Creative capsule")
-        self._driver.find_element(*self.__yahooBtn).click()
+        # self._driver.find_element(*self.__yahooBtn).click()
+        ActionChains(self._driver).send_keys(Keys.ENTER).perform()
 
         wait = WebDriverWait(self._driver, 10)
         wait.until(ec.presence_of_element_located(self.__yahooLink))
