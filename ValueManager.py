@@ -7,6 +7,14 @@ sharedPost = "https://www.creativecapsule.com/vacancies/net-developer-senior-dev
 CClinkedInPageUrl = "https://www.linkedin.com/company/creativecapsule/"
 companyCultureUrl = "https://www.creativecapsule.com/company-culture/"
 ourPeopleUrl = "https://www.creativecapsule.com/our-people/"
+dotNetDevUrl = "https://www.creativecapsule.com/vacancies/net-developer-senior-developer/"
+genericPositionUrl = "https://www.creativecapsule.com/vacancies/generic-position/?form=1"
+sitemapUrl = "https://www.creativecapsule.com/sitemap_index.xml"
+pageSitemapUrl = "https://www.creativecapsule.com/page-sitemap.xml"
+deNewsUrl = "https://www.creativecapsule.com/de/news/"
+ourLeadershipUrl = "https://www.creativecapsule.com/our-leadership/"
+spcUrl = "https://www.creativecapsule.com/software-companies/"
+deSpcUrl = "https://www.creativecapsule.com/de/software-companies/"
 
 
 
@@ -28,4 +36,11 @@ gina_parab_text = "Creative Capsule's culture is transparent and open. There is 
 snehal_naik_text = "The people at Creative Capsule are pushed to grow themselves by being creative in their problem-solving and their solution approaches. I can explore new patterns, collaborate with peers on new ideas, even make mistakes. This freedom has helped me in a short time achieve career milestones that I didn’t think were even possible."
 
 
+invalidSearchedText = "Whoops! We couldn't find what you're looking for.\n"'Sorry, we are unable to find a match for "tttt". You can still send us your ''application and we will help you out.'
+invalidTextToPassInTheSearchField = "tttt"
+validTextToPassInTheSearchField = ".NET Developer/ Senior Developer"
+placeholder = "Search Job Title"
 
+sitemapTxt = "This XML Sitemap Index file contains 1 sitemaps."
+pageSitemapTxt = "This XML Sitemap contains 37 URLs."
+sitemapLinksGroup = 'https://www.creativecapsule.com/de/news/', 'https://www.creativecapsule.com/our-leadership/', 'https://www.creativecapsule.com/software-companies/', 'https://www.creativecapsule.com/de/software-companies/'
