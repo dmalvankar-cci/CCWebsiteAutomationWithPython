@@ -1,7 +1,5 @@
 import pytest
 import ValueManager
-from pageObjects import WorkingAtCC_page
-from pageObjects.OpenPositions_page import OpenPositionsPage
 from pageObjects.Sitemap_page import SitemapPage
 
 from pageObjects.WorkingAtCC_page import WorkingAtCCPage
@@ -37,28 +35,41 @@ def test_verifyTheSitemaps(driver, test_verifyIFSitemap_isOpened):
 
 
 def test_verifyThePageSitemap(driver, test_verifyTheSitemaps):
+    """
+            Test : Verify if the all 37 rows are present in the table
+            and verify some random links if those are present
+            URL : https://www.creativecapsule.com/page-sitemap.xml
+    """
+
     WorkingAtCC_page = WorkingAtCCPage(driver)
     Sitemap_page = SitemapPage(driver)
+    # verify the text on the page sitemap
     assert Sitemap_page.verify_PageSitemapText == ValueManager.pageSitemapTxt, "Text is not matching"
+    # verify the row count is 37
     assert Sitemap_page.table_rows_count == 37, "The row count is not matching"
+    # verify some random links text
     assert Sitemap_page.verify_someOfLinks == ValueManager.sitemapLinksGroup, "Group links are not matching"
 
 def test_verifySomeRandomLinks(driver, test_verifyTheSitemaps):
+    """
+        Test : Verify the navigation of some links
+        URL : https://www.creativecapsule.com/page-sitemap.xml
+    """
     WorkingAtCC_page = WorkingAtCCPage(driver)
     Sitemap_page = SitemapPage(driver)
-    # Sitemap_page.click_deNews()
-    # assert WorkingAtCC_page.current_url == ValueManager.deNewsUrl, "The url is not matching"
-    # WorkingAtCC_page.getTheBackPage()
+    # Click our leadership link
     Sitemap_page.click_enOurLeadership()
+    # verify redirection of the leadership link
     assert WorkingAtCC_page.current_url == ValueManager.ourLeadershipUrl, "The url is not matching"
     WorkingAtCC_page.getTheBackPage()
-    # Sitemap_page.click_deSpc()
-    # assert WorkingAtCC_page.current_url == ValueManager.deSpcUrl, "The url is not matching"
-    # WorkingAtCC_page.getTheBackPage()
+    # Click spc page link
     Sitemap_page.click_enSpc()
+    # verify redirection of the spc link
     assert WorkingAtCC_page.current_url == ValueManager.spcUrl, "The url is not matching"
     WorkingAtCC_page.getTheBackPage()
+    # click open positions link
     Sitemap_page.click_enOpenPositions()
+    # verify redirection of the open positions link
     assert WorkingAtCC_page.current_url == ValueManager.openPositionUrl, "The url is not matching"
 
 

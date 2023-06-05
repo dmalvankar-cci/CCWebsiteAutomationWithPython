@@ -3,12 +3,14 @@ import time
 import readExcelData
 from ValueManager import sharedPost
 from pageObjects.CCJobShare_page import CCJobSharePage
+from pageObjects.WorkingAtCC_page import WorkingAtCCPage
 
 
 def test_checkJobShareLinkedin(driver):
 
 
     CCJobShare_page = CCJobSharePage(driver)
+    WorkingAtCC_page = WorkingAtCCPage(driver)
 
     # Take username and password from Excel sheet
     username = readExcelData.read_data(2, 1)
@@ -22,6 +24,7 @@ def test_checkJobShareLinkedin(driver):
     CCJobShare_page.clickLinkedInShare()
     # In the LinkedIn window perform login
     driver.switch_to.window(driver.window_handles[1])
+    WorkingAtCC_page.click_linkedIn_signIn()
     CCJobShare_page.perform_login(username, password)
     # Click on share post
     CCJobShare_page.postToLinkedIn()
