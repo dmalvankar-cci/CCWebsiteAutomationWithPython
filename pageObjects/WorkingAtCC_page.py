@@ -117,10 +117,11 @@ class WorkingAtCCPage:
         self._driver.find_element(*self.__CommonImage_inCompanyCulture).click()
 
     def wait_till_firstImage_isDisplayed(self):
-        wait = WebDriverWait(self._driver, 10)
+        wait = WebDriverWait(self._driver, 20)
         wait.until(ec.presence_of_element_located(self.__first_image_in_OurCulture))
-        self._driver.save_screenshot(ValueManager.save_screenshot_path_CompanyCultureFirstImage)
-        return self._driver.find_element(*self.__first_image_in_OurCulture).is_displayed()
+        the_first_image = self._driver.find_element(*self.__first_image_in_OurCulture)
+        the_first_image.click()
+        return the_first_image.is_displayed()
 
 
     def click_linkedIn_signIn(self):

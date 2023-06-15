@@ -5,7 +5,7 @@ import pytest
 import ValueManager
 import readExcelData
 from ValueManager import workingAtCCUrl
-from pageObjects.CCJobShare_page import CCJobSharePage
+from pageObjects.JobDescriptions_page import JobDescriptionsPage
 from pageObjects.WorkingAtCC_page import WorkingAtCCPage
 
 @pytest.fixture
@@ -124,18 +124,9 @@ def test_linksNavigation(driver, test_verifyIFWorkingAtCC_isOpened):
     # Take username and password from Excel sheet
     username = readExcelData.read_data(2, 1)
     password = readExcelData.read_data(2, 2)
-    CCJobShare_page = CCJobSharePage(driver)
+    JobDescriptions_page = JobDescriptionsPage(driver)
     WorkingAtCC_page = WorkingAtCCPage(driver)
-    # Click on the "follow us" link
-    WorkingAtCC_page.click_followus_link()
-    # Verify if the "linkedin" page is opened
-    driver.switch_to.window(driver.window_handles[1])
-    WorkingAtCC_page.click_linkedIn_signIn()
-    CCJobShare_page.perform_login(username, password)
-    driver.switch_to.window(driver.window_handles[0])
-    WorkingAtCC_page.click_followus_link()
-    driver.switch_to.window(driver.window_handles[2])
-    assert WorkingAtCC_page.current_url == ValueManager.CClinkedInPageUrl
+
     # get back to the "working at cc page"
     driver.switch_to.window(driver.window_handles[0])
     # Click on the "know our people" link
@@ -151,7 +142,7 @@ def test_linksNavigation(driver, test_verifyIFWorkingAtCC_isOpened):
     # Click on the first image
     WorkingAtCC_page.click_commonImg()
     # verify if the first image is opened
-    assert WorkingAtCC_page.wait_till_firstImage_isDisplayed()
+    assert WorkingAtCC_page.wait_till_firstImage_isDisplayed
     # Click on the close
     WorkingAtCC_page.click_ourCultureClose()
     # get back to the "working at cc page"
@@ -160,6 +151,18 @@ def test_linksNavigation(driver, test_verifyIFWorkingAtCC_isOpened):
     WorkingAtCC_page.click_viewOpenPositions_link()
     # Verify if the "open positions" page is opened
     assert WorkingAtCC_page.current_url == ValueManager.openPositionUrl
+    # get back to the "working at cc page"
+    WorkingAtCC_page.getTheBackPage()
+    # Click on the "follow us" link
+    WorkingAtCC_page.click_followus_link()
+    # Verify if the "linkedin" page is opened
+    driver.switch_to.window(driver.window_handles[1])
+    WorkingAtCC_page.click_linkedIn_signIn()
+    JobDescriptions_page.perform_login(username, password)
+    driver.switch_to.window(driver.window_handles[0])
+    WorkingAtCC_page.click_followus_link()
+    driver.switch_to.window(driver.window_handles[2])
+    assert WorkingAtCC_page.current_url == ValueManager.CClinkedInPageUrl
 
 
 

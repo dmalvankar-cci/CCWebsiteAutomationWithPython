@@ -15,13 +15,14 @@ deNewsUrl = "https://www.creativecapsule.com/de/news/"
 ourLeadershipUrl = "https://www.creativecapsule.com/our-leadership/"
 spcUrl = "https://www.creativecapsule.com/software-companies/"
 deSpcUrl = "https://www.creativecapsule.com/de/software-companies/"
+aboutUsUrl = "https://www.creativecapsule.com/about-us/"
+careerPathUrl = "https://www.creativecapsule.com/career-paths/"
+dotNetFormUrl = "https://www.creativecapsule.com/vacancies/net-developer-senior-developer/?form=1"
 
-
-
+save_screenshot_path_FacebookShare =  "D:\Git work\CCWebsiteAutomationWithPython\Screenshots\FacebookShare.png"
 save_screenshot_path_OurCultureImg1 = "D:\Git work\CCWebsiteAutomationWithPython\Screenshots\OurCultureImg1Hover.png"
 save_screenshot_path_OurCultureImg2 = "D:\Git work\CCWebsiteAutomationWithPython\Screenshots\OurCultureImg2Hover.png"
 save_screenshot_path_linkedin = "D:\Git work\CCWebsiteAutomationWithPython\Screenshots\linkedin.png"
-save_screenshot_path_CompanyCultureFirstImage= "D:\Git work\CCWebsiteAutomationWithPython\Screenshots\CompanyCultureFirstImage.png"
 
 #Working AT CC Paragraphs
 training_education = "We provide opportunities for continued position-specific training and opportunities to learn new skills and technologies. We also offer the flexibility to take personal leave to pursue professional or educational goals. Your achievements are a key to your growth."
@@ -40,6 +41,8 @@ invalidSearchedText = "Whoops! We couldn't find what you're looking for.\n"'Sorr
 invalidTextToPassInTheSearchField = "tttt"
 validTextToPassInTheSearchField = ".NET Developer/ Senior Developer"
 placeholder = "Search Job Title"
+
+JobDesciptionPage_PositionNumbers = "If that's not your area, check our other 7 Open Positions"
 
 sitemapTxt = "This XML Sitemap Index file contains 1 sitemaps."
 pageSitemapTxt = "This XML Sitemap contains 37 URLs."
