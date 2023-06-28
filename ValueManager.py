@@ -47,3 +47,18 @@ JobDesciptionPage_PositionNumbers = "If that's not your area, check our other 7 
 sitemapTxt = "This XML Sitemap Index file contains 1 sitemaps."
 pageSitemapTxt = "This XML Sitemap contains 37 URLs."
 sitemapLinksGroup = 'https://www.creativecapsule.com/de/news/', 'https://www.creativecapsule.com/our-leadership/', 'https://www.creativecapsule.com/software-companies/', 'https://www.creativecapsule.com/de/software-companies/'
+
+
+# Apply online errors
+FnameErrorTxt = "Please enter first name."
+LnameErrorTxt = "Please enter last name."
+EmailErrorTxt = "Please enter an email address."
+PhoneErrorTxt = "Please enter a phone number."
+DOBErrorTxt = "Please enter date of birth."
+EducationErrorTxt = "Please select the education."
+CityErrorTxt = "Please enter your city."
+StateErrorTxt = "Please enter your state."
+CCEmployeeErrorTxt = "Please enter the referrer's name."
+CoverletterErrorTxt = "Please select a file."
+ResumeErrorTxt = "Please select a file."
+GlobalErrorTxt = "×\nPlease enter all the mandatory fields."
