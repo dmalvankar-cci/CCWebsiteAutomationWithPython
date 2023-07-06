@@ -1,5 +1,6 @@
 # Global URLs
 websiteUrl = "https://www.creativecapsule.com/"
+AWSUrl = "https://www.creativecapsule.com/aws/"
 openPositionUrl = "https://www.creativecapsule.com/open-positions/"
 germanSiteUrl = "https://www.creativecapsule.com/de"
 workingAtCCUrl = "https://www.creativecapsule.com/working-at-creative-capsule/"
